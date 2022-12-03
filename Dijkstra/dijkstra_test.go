@@ -20,7 +20,7 @@ func TestDijkstra(t *testing.T) {
 
 	root := "saba"
 	distances := dijkstra(graph, root)
-	println(distances)
+	fmt.Println(distances)
 
 }
 
