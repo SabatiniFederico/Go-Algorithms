@@ -39,3 +39,25 @@ func TestPriorityQueueSimple(t *testing.T) {
 		fmt.Println(r)
 	}
 }
+
+func TestDijkstraComplicated(t *testing.T) {
+	graph := make(map[string][]Node)
+
+	graph["a"] = []Node{
+		{name: "b", weight: 5},
+		{name: "c", weight: 5},
+		{name: "d", weight: 5}}
+	graph["b"] = []Node{
+		{name: "a", weight: 5},
+		{name: "d", weight: 1}}
+	graph["c"] = []Node{
+		{name: "a", weight: 5},
+		{name: "d", weight: 1}}
+	graph["d"] = []Node{
+		{name: "a", weight: 5},
+		{name: "b", weight: 1},
+		{name: "c", weight: 1}}
+
+	distances := dijkstra(graph, "b")
+	fmt.Println(distances)
+}
